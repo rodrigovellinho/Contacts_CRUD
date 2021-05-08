@@ -1,0 +1,19 @@
+.editBtn {
+  padding: 0.4rem;
+  border: none;
+  background: var(--blue-light);
+  color: var(--white);
+  border-radius: 5px;
+}
+
+.editBtn:hover {
+  opacity: 0.8;
+}
+
+.deleteBtn {
+  padding: 0.4rem;
+  border: none;
+  background: var(--text-title);
+  color: var(--white);
+  border-radius: 5px;
+}
