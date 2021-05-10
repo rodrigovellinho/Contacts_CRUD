@@ -1,15 +1,14 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import styles from "./styles.module.css";
 
 export default function User({ user, deleteUser }) {
-  function handleEditUser() {
-    return null;
-  }
-
   function handleDeleteUser(e) {
     e.preventDefault();
-
-    deleteUser(user.id);
+    let answer = window.confirm("Você tem certeza?");
+    if (answer === true) {
+      deleteUser(user.id);
+    }
   }
 
   return (
@@ -17,9 +16,9 @@ export default function User({ user, deleteUser }) {
       <td style={{ textAlign: "center" }}>{user.name}</td>
       <td style={{ textAlign: "center" }}>{user.email}</td>
       <td style={{ textAlign: "center" }}>
-        <button className={styles.editBtn} onClick={handleEditUser}>
-          Editar
-        </button>
+        <Link to={`/edit/${user.id}`}>
+          <button className={styles.editBtn}>Editar</button>
+        </Link>
       </td>
       <td style={{ textAlign: "center" }}>
         <button className={styles.deleteBtn} onClick={handleDeleteUser}>

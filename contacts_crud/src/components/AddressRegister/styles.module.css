@@ -1,0 +1,50 @@
+.container {
+  padding: 1rem;
+  background: var(--gray-100);
+}
+
+.title {
+  font-size: 1.4rem;
+  font-weight: 600;
+  margin-left: 10rem;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  font-size: 1.2rem;
+  margin-top: 0.8rem;
+}
+
+.singleInput {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 0.5rem;
+}
+
+.singleInput span {
+  width: 25%;
+}
+
+.singleInput input {
+  padding: 0.3rem;
+  border: none;
+  width: 55%;
+}
+
+.singleInput:first-child {
+  width: 100%;
+}
+
+.button {
+  padding: 0.3rem;
+  margin-left: 0.5rem;
+  border: none;
+  background: var(--blue-light);
+  color: var(--white);
+}
+
+.button:hover {
+  opacity: 0.8;
+}

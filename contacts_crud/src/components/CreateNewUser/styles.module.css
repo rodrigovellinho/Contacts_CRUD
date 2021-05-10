@@ -3,7 +3,7 @@
   color: var(--white);
   padding: 1.5rem 2rem;
   margin-top: 1rem;
-  width: 40%;
+  width: 45%;
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
@@ -17,4 +17,5 @@
   background: var(--blue-light);
   color: var(--white);
   border-radius: 5px;
+  margin-left: 1rem;
 }

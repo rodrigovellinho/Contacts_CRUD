@@ -39,6 +39,7 @@ const users = {
 // Create Context
 export const UserContext = createContext(users);
 
+// Provider Component
 export const UserProvider = ({ children }) => {
   const [state, dispatch] = useReducer(UsersReducer, users);
 

@@ -11,6 +11,17 @@ export default function UserRegisterModal({ isModalOpen, onRequestClose }) {
   const [userName, setUserName] = useState("");
   const [userEmail, setUserEmail] = useState("");
   const [userPassword, setUserPassword] = useState("");
+  const [errorName, setErrorName] = useState(false);
+  const [errorEmail, setErroEmail] = useState(false);
+  const [errorPassword, setErrorPassword] = useState(false);
+
+  /*   function validateUserName(userName) {
+    if (userName < 1) setUserName(true);
+  }
+
+  function validateUserEmail(userEmail) {}
+
+  function validateUserPassword(userPassword) {} */
 
   function handleCreateNewUser(e) {
     e.preventDefault();
@@ -58,7 +69,9 @@ export default function UserRegisterModal({ isModalOpen, onRequestClose }) {
               placeholder="Nome"
               value={userName}
               onChange={(e) => setUserName(e.target.value.toUpperCase())}
+              required
             />
+            <div>{errorName && <small>Escreva um nome válido</small>}</div>
           </div>
 
           <div className={styles.singleInputModal}>
@@ -66,20 +79,32 @@ export default function UserRegisterModal({ isModalOpen, onRequestClose }) {
             <input
               className={styles.input}
               type="email"
-              placeholder="email"
+              placeholder="Email"
               value={userEmail}
               onChange={(e) => setUserEmail(e.target.value)}
+              required
             />
+            <div>{errorEmail && <small>Digite um email válido</small>}</div>
           </div>
 
           <div className={styles.singleInputModal}>
             <span>Senha:</span>
             <input
               className={styles.input}
-              placeholder="senha"
+              type="password"
+              placeholder="Senha"
               value={userPassword}
               onChange={(e) => setUserPassword(e.target.value)}
+              required
             />
+            <div>
+              {errorPassword && (
+                <small>
+                  Digite uma senha entre 4 e 8 caracteres contendo letras e
+                  números e um caractere especial
+                </small>
+              )}
+            </div>
           </div>
 
           <button type="submit" onClick={handleCreateNewUser}>
