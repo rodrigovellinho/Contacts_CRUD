@@ -1,14 +1,15 @@
 .container {
-  padding: 1rem;
+  padding: 0.5rem;
   background: var(--gray-100);
-  width: 98%;
   margin-bottom: 1rem;
+  width: 98%;
 }
 
 .title {
   font-size: 1.5rem;
   font-weight: 600;
-  margin-left: 12.5rem;
+  margin-left: 12rem;
+  margin-bottom: 1rem;
 }
 
 .form {
@@ -37,30 +38,4 @@
 
 .singleInput:first-child {
   width: 100%;
-}
-
-.button {
-  padding: 0.3rem;
-  margin-left: 0.5rem;
-  border: none;
-  background: var(--blue-light);
-  color: var(--white);
-}
-
-.button:hover {
-  opacity: 0.8;
-}
-
-.buttonSave {
-  padding: 0.3rem;
-  margin-left: 0.5rem;
-  border: none;
-  background: var(--blue-light);
-  color: var(--white);
-  width: 60%;
-  margin-left: 7rem;
-}
-
-.buttonSave:hover {
-  opacity: 0.8;
 }

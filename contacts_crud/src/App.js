@@ -4,6 +4,7 @@ import { AddressDataProvider } from "./hooks/useAddress";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Main from "./pages/main";
 import EditRegister from "./pages/editRegister";
+import UserFirstRegister from "./pages/userFirstRegister";
 
 function App() {
   return (
@@ -11,7 +12,8 @@ function App() {
       <UserProvider>
         <AddressDataProvider>
           <Switch>
-            <Route path="/edit" component={EditRegister} />
+            <Route path="/register" component={UserFirstRegister} />
+            <Route path="/edit/:id" component={EditRegister} />
             <Route exact path="/" component={Main} />
           </Switch>
         </AddressDataProvider>

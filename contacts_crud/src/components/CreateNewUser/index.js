@@ -1,28 +1,16 @@
 import React, { useState } from "react";
-import UserRegisterModal from "../UserRegisterModal";
+import { Link } from "react-router-dom";
 import styles from "./styles.module.css";
 
 export default function CreateNewUser() {
-  const [isModalOpen, setIsModalOpen] = useState(false);
-
-  function handleOpenModal() {
-    setIsModalOpen(true);
-  }
-  function handleCloseModal() {
-    setIsModalOpen(false);
-  }
   return (
     <>
       <div className={styles.container}>
         <span>Cadastrar novo usuário</span>
-        <button onClick={handleOpenModal} className={styles.registerBtn}>
-          Cadastrar
-        </button>
+        <Link to="/register">
+          <button className={styles.registerBtn}>Cadastrar</button>
+        </Link>
       </div>
-      <UserRegisterModal
-        isModalOpen={isModalOpen}
-        onRequestClose={handleCloseModal}
-      />
     </>
   );
 }

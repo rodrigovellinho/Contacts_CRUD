@@ -1,0 +1,95 @@
+.form {
+  font-family: "Roboto", sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-left: 2rem;
+  width: 100%;
+}
+
+.singleInput {
+  width: 90%;
+  margin-bottom: 2rem;
+  height: 3rem;
+}
+
+.singleInput span {
+  width: 25%;
+  font-weight: 400;
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+}
+
+.inputText {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.inputText span {
+  width: 20%;
+}
+
+.input {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  padding: 1.5rem;
+  height: 1rem;
+  border-radius: 0.25rem;
+  background-color: #e7e9ee;
+  margin-bottom: 0.5rem;
+  border: 1px solid #d7d7d7;
+  font-weight: 400;
+  font-size: 1.1rem;
+}
+
+.input::placeholder {
+  color: var(--gray-900);
+  font-size: 1rem;
+}
+
+.errorMessage {
+  margin-bottom: 1rem;
+  color: var(--red);
+  margin-left: 9rem;
+}
+
+.btnContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  width: 100%;
+}
+
+button[type="submit"] {
+  width: 20%;
+  padding: 0.5rem;
+  height: 3rem;
+  background-color: var(--blue);
+  color: var(--white);
+  border-radius: 0.25rem;
+  border: 0;
+  font-size: 1rem;
+  margin-top: 1rem;
+  cursor: pointer;
+  transition: filter 0.2s;
+}
+
+button:hover {
+  filter: brightness(0.9);
+}
+
+.linkBtn {
+  width: 100%;
+  padding: 0.5rem;
+  height: 3rem;
+  background-color: var(--red);
+  color: var(--white);
+  border-radius: 0.25rem;
+  border: 0;
+  font-size: 1rem;
+  margin-top: 1rem;
+  cursor: pointer;
+  transition: filter 0.2s;
+}

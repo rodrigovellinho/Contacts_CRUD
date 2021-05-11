@@ -30,9 +30,27 @@ function UsersReducer(state, action) {
 //Initial state
 const users = {
   users: [
-    { id: 0, name: "Rodrigo", email: "rodrigo@gmail.com", password: "123" },
-    { id: 1, name: "Rafael", email: "rafael@gmail.com", password: "123" },
-    { id: 2, name: "Pedro", email: "pedro@gmail.com", password: "123" },
+    {
+      id: 0,
+      name: "Rodrigo",
+      email: "rodrigo@gmail.com",
+      password: "123",
+      phones: [],
+    },
+    {
+      id: 1,
+      name: "Rafael",
+      email: "rafael@gmail.com",
+      password: "123",
+      phones: [],
+    },
+    {
+      id: 2,
+      name: "Pedro",
+      email: "pedro@gmail.com",
+      password: "123",
+      phones: [],
+    },
   ],
 };
 

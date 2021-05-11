@@ -31,17 +31,39 @@
   padding: 1rem;
 }
 
-.addressRegister {
-  margin: 1rem 1rem 1rem 1rem;
-  width: 45%;
+.fullRegister {
+  margin: 1rem auto;
+  width: 98%;
 }
 
-.btnContainer {
-  width: 100%;
-  position: relative;
-  margin-top: 3.5rem;
+.personnalRegister {
+  width: 49%;
 }
-.btn {
+
+.personnalRegister {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  width: 100%;
+}
+
+.addressRegister {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  width: 100%;
+}
+
+.addressContainer {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  margin-bottom: 0.2rem;
+}
+
+.btnAddressContainer {
+  margin-top: 2.5rem;
+}
+
+.btnAddress {
   padding: 1rem;
   text-decoration: none;
   border: none;
@@ -49,12 +71,18 @@
   color: var(--white);
   border-radius: 5px;
   position: absolute;
-  right: 130px;
-  bottom: 20px;
+  right: 10px;
+  bottom: 0;
 }
 
-.btn:hover {
+.btnAddress:hover {
   opacity: 0.8;
+}
+
+.btnContainer {
+  width: 100%;
+  position: relative;
+  margin-top: 3.5rem;
 }
 
 .btnCancel {
