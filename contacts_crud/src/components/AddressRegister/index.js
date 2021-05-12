@@ -1,69 +1,65 @@
 import React, { useContext, useState } from "react";
-import { AddressContext } from "../../hooks/useAddress";
 import { UserContext } from "../../hooks/useUsers";
+import AddressField from "../AddressField";
 import styles from "./styles.module.css";
 
-export default function AddressRegister({ address }) {
-  const { addressData, getAddress } = useContext(AddressContext);
+export default function AddressRegister({ selectedUser }) {
   const { users, editUser } = useContext(UserContext);
-  const [cep, setCep] = useState(0);
 
-  function searchCEP(e) {
-    e.preventDefault();
-    getAddress(cep);
+  const [addresses, setAddresses] = useState([
+    {
+      id: 1,
+      cep: "",
+      logradouro: "",
+      bairro: "",
+      localidade: "",
+      uf: "",
+    },
+  ]);
+
+  function handleAddressChange(value, field, id) {
+    setAddresses((prevState) => {
+      return prevState.map((address) => ({
+        ...address,
+        [field]: address.id === id ? value : address[field],
+      }));
+    });
   }
 
-  function handleCreateAddress(e) {
-    e.preventDefault();
-
-    const newAddress = {
-      cep: addressData.cep,
-      logradouro: addressData.logradouro,
-      bairro: addressData.bairro,
-      localidade: addressData.localidade,
-      uf: addressData.uf,
-    };
-
-    editUser(newAddress);
-    console.log(newAddress);
+  function addAddress() {
+    setAddresses((prevState) => [
+      ...prevState,
+      {
+        id: Math.floor(Math.random() * 1000),
+        cep: "",
+        logradouro: "",
+        bairro: "",
+        localidade: "",
+        uf: "",
+      },
+    ]);
   }
 
   return (
-    <div className={styles.container}>
-      <span className={styles.title}>{address}</span>
-      <form className={styles.form}>
-        <div className={styles.singleInput}>
-          <span>CEP</span>
-          <input
-            className={styles.input}
-            value={cep}
-            onChange={(e) => setCep(e.target.value)}
+    <>
+      <div className={styles.addressContainer}>
+        {addresses.map((address) => (
+          <AddressField
+            values={address}
+            onChange={(value, field) =>
+              handleAddressChange(value, field, address.id)
+            }
           />
-          <button className={styles.button} onClick={searchCEP}>
-            Procurar
-          </button>
-        </div>
-
-        <div className={styles.singleInput}>
-          <span>Logradouro:</span>
-          <input className={styles.input} value={addressData.logradouro} />
-        </div>
-        <div className={styles.singleInput}>
-          <span>Bairro:</span>
-          <input className={styles.input} value={addressData.bairro} />
-        </div>
-        <div className={styles.singleInput}>
-          <span>Localidade:</span>
-          <input className={styles.input} value={addressData.localidade} />
-        </div>
-        <div className={styles.singleInput}>
-          <span>UF:</span>
-          <input className={styles.input} value={addressData.uf} />
-        </div>
-        <button className={styles.buttonSave} onClick={handleCreateAddress}>
-          Salvar
+        ))}
+      </div>
+      <div className={styles.btnContainer}>
+        <button
+          className={styles.buttonNewAddress}
+          onClick={() => addAddress()}
+        >
+          Adicionar novo Endereço
         </button>
-      </form>
-    </div>
+      </div>
+    </>
   );
 }

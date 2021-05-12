@@ -9,8 +9,7 @@
   flex-direction: column;
   justify-content: flex-start;
   align-items: flex-start;
-  margin-top: 2rem;
-
+  margin-top: 0.4rem;
   width: 1100px;
   border-radius: 5px;
   background: var(--gray-200);
@@ -46,37 +45,9 @@
   width: 100%;
 }
 
-.addressRegister {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  width: 100%;
-}
-
 .addressContainer {
-  display: flex;
-  flex-direction: column;
-  position: relative;
   margin-bottom: 0.2rem;
-}
-
-.btnAddressContainer {
-  margin-top: 2.5rem;
-}
-
-.btnAddress {
-  padding: 1rem;
-  text-decoration: none;
-  border: none;
-  background: var(--blue-light);
-  color: var(--white);
-  border-radius: 5px;
-  position: absolute;
-  right: 10px;
-  bottom: 0;
-}
-
-.btnAddress:hover {
-  opacity: 0.8;
+  width: 100%;
 }
 
 .btnContainer {

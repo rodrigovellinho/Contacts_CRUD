@@ -3,6 +3,7 @@ import { createContext, useReducer } from "react";
 const ACTIONS = {
   DELETE_USER: "DELETE_USER",
   ADD_TRANSACTION: "ADD_USER",
+  EDIT_USER: "EDIT_USER",
 };
 
 function UsersReducer(state, action) {
@@ -36,6 +37,7 @@ const users = {
       email: "rodrigo@gmail.com",
       password: "123",
       phones: [],
+      address: [],
     },
     {
       id: 1,
@@ -43,6 +45,7 @@ const users = {
       email: "rafael@gmail.com",
       password: "123",
       phones: [],
+      address: [],
     },
     {
       id: 2,
@@ -50,6 +53,7 @@ const users = {
       email: "pedro@gmail.com",
       password: "123",
       phones: [],
+      address: [],
     },
   ],
 };

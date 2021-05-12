@@ -1,6 +1,5 @@
 import React from "react";
 import UserRegister from "../UserRegister";
-import { Link } from "react-router-dom";
 import styles from "./styles.module.css";
 
 export default function FirstRegister() {

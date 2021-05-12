@@ -8,7 +8,7 @@
 .title {
   font-size: 1.5rem;
   font-weight: 600;
-  margin-left: 13.5rem;
+  margin-left: 14rem;
   margin-bottom: 1rem;
 }
 
@@ -20,35 +20,25 @@
   margin-top: 0.8rem;
 }
 
-.singleInput {
+.phoneContainer {
   display: flex;
-  align-items: flex-start;
-  margin-bottom: 0.5rem;
+  flex-direction: row;
+  justify-content: center;
+  margin-top: 0.1rem;
 }
 
-.singleInput span {
-  width: 25%;
-}
-
-.singleInput input {
-  padding: 0.3rem;
-  border: none;
-  width: 55%;
-}
-
-.singleInput:first-child {
-  width: 100%;
+.inputMask {
+  margin-left: 1rem;
 }
 
 .btnContainer {
   display: flex;
-  flex-direction: row;
-  align-items: flex-end;
-  justify-content: space-evenly;
+  justify-content: right;
+  position: relative;
+  height: 2rem;
 }
 
-.buttonNewPhone,
-.buttonSavePhone {
+.buttonNewPhone {
   padding: 0.3rem;
   border: none;
   background: var(--blue-light);
@@ -56,13 +46,10 @@
   width: 30%;
   margin-bottom: 0.5rem;
   border-radius: 5px;
+  position: absolute;
+  right: 9rem;
 }
 
-.buttonSavePhone {
-  background: var(--green);
-}
-
-.buttonSavePhone:hover,
-.buttonNewPhone {
+.buttonNewPhone:hover {
   opacity: 0.8;
 }

@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useContext } from "react";
 import { UserContext } from "../../hooks/useUsers";
 import PersonnalRegister from "../PersonnalRegister";
 import { Link } from "react-router-dom";
@@ -21,12 +21,7 @@ export default function CompleteRegister({ selectedUser }) {
             <PhoneRegister selectedUser={selectedUser} />
           </div>
           <div className={styles.addressContainer}>
-            <div className={styles.addressRegister}>
-              <AddressRegister />
-            </div>
-            <div className={styles.btnAddressContainer}>
-              <button className={styles.btnAddress}>Novo endereço</button>
-            </div>
+            <AddressRegister selectedUser={selectedUser} />
           </div>
         </div>
         <div className={styles.btnContainer}>

@@ -13,7 +13,7 @@
 .deleteBtn {
   padding: 0.4rem;
   border: none;
-  background: var(--text-title);
+  background: var(--blue-dark);
   color: var(--white);
   border-radius: 5px;
 }
