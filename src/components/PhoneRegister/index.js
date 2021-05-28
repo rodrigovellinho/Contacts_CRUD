@@ -1,6 +1,7 @@
 import React, { useState, useContext } from "react";
 import { UserContext } from "../../hooks/useUsers";
 import InputMask from "react-input-mask";
+import { Container, Card, Form, Button, Row } from "react-bootstrap";
 import styles from "./styles.module.css";
 
 export default function PhoneRegister({ selectedUser }) {
@@ -31,28 +32,42 @@ export default function PhoneRegister({ selectedUser }) {
     ]);
   }
 
+  function handleAddPhones(e) {
+    e.preventDefault();
+
+    addUser(phones);
+
+    console.log(phones);
+  }
+
   return (
-    <div className={styles.container}>
-      <span className={styles.title}>Telefone</span>
-      <div className={styles.form}>
-        {phones.map((phone) => (
-          <div className={styles.phoneContainer}>
-            <span>Telefone:</span>
-            <InputMask
-              className={styles.inputMask}
-              mask="(99)99999-9999"
-              value={phone.number}
-              onChange={(e) => handleChangePhone(e.target.value, phone.id)}
-              style={{ marginBottom: "1rem" }}
-            />
-          </div>
-        ))}
-        <div className={styles.btnContainer}>
-          <button className={styles.buttonNewPhone} onClick={() => addPhone()}>
-            Adicionar
-          </button>
-        </div>
-      </div>
-    </div>
+    <Card className="mt-2 p-1">
+      <Form>
+        <Form.Label className="font-weight-bold h5">Telefone</Form.Label>
+
+        <Container>
+          <Row>
+            {phones.map((phone) => (
+              <Form.Group className="mr-3">
+                <Form.Label>Telefone:</Form.Label>
+                <InputMask
+                  className={styles.inputMask}
+                  mask="(99)99999-9999"
+                  value={phone.number}
+                  onChange={(e) => handleChangePhone(e.target.value, phone.id)}
+                />
+              </Form.Group>
+            ))}
+          </Row>
+        </Container>
+
+        <Button
+          className="btn-block  btn-primary float-center"
+          onClick={addPhone}
+        >
+          Adicionar
+        </Button>
+      </Form>
+    </Card>
   );
 }

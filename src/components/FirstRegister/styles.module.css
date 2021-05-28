@@ -1,8 +1,9 @@
 .container {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  background: #f8f9fa;
+  height: 100vh;
 }
+
+/* 
 
 .formContainer {
   display: flex;
@@ -35,3 +36,4 @@
   width: 100%;
   justify-content: center;
 }
+ */

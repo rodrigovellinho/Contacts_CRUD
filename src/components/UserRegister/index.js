@@ -1,6 +1,7 @@
 import React, { useState, useContext } from "react";
 import { UserContext } from "../../hooks/useUsers";
 import { Link } from "react-router-dom";
+import { Form, Button } from "react-bootstrap";
 import styles from "./styles.module.css";
 
 export default function UserRegister() {
@@ -57,6 +58,8 @@ export default function UserRegister() {
       return;
     }
 
+    console.log(isRequiredFieldsEmpty);
+
     if (!errorName && !errorEmail && !errorPassword) {
       const addedUser = {
         id: Math.floor(Math.random() * 10000),
@@ -73,76 +76,98 @@ export default function UserRegister() {
   }
 
   return (
-    <form className={styles.form}>
-      <div className={styles.singleInput}>
-        <div className={styles.inputText}>
-          <span>Nome</span>
-          <input
-            className={styles.input}
-            type="text"
-            placeholder="Nome"
-            value={userName}
-            onChange={(e) => setUserName(e.target.value)}
-            onBlur={(e) => validateUserName(e.target.value)}
-            required
-          />
+    <Form>
+      <Form.Group controlId="formName">
+        <div className="row">
+          <div className="col-1 mt-1">
+            <Form.Label>Nome:</Form.Label>
+          </div>
+          <div className="col-10">
+            <Form.Control
+              type="text"
+              placeholder="Nome"
+              value={userName}
+              onChange={(e) => setUserName(e.target.value)}
+              onBlur={(e) => validateUserName(e.target.value)}
+              required
+            />
+          </div>
         </div>
-        <div className={styles.errorMessage}>
-          {errorName ? <small>Escreva um nome válido</small> : null}
-        </div>
-      </div>
+        <Form.Text>
+          {errorName ? (
+            <small className="text-danger">Escreva um nome válido</small>
+          ) : null}
+        </Form.Text>
+      </Form.Group>
 
-      <div className={styles.singleInput}>
-        <div className={styles.inputText}>
-          <span>Email:</span>
-          <input
-            className={styles.input}
-            type="email"
-            placeholder="Email"
-            value={userEmail}
-            onChange={(e) => setUserEmail(e.target.value)}
-            onBlur={(e) => validateUserEmail(e.target.value)}
-            required
-          />
+      <Form.Group controlId="formEmail">
+        <div className="row">
+          <div className="col-1 mt-1">
+            <Form.Label>Email:</Form.Label>
+          </div>
+          <div className="col-10">
+            <Form.Control
+              type="email"
+              placeholder="Email"
+              value={userEmail}
+              onChange={(e) => setUserEmail(e.target.value)}
+              onBlur={(e) => validateUserEmail(e.target.value)}
+              required
+            />
+          </div>
+        </div>
+        <Form.Text>
+          {errorEmail ? (
+            <small className="text-danger">Digite um email válido</small>
+          ) : null}
+        </Form.Text>
+      </Form.Group>
+
+      <Form.Group controlId="formPassword">
+        <div className="row">
+          <div className="col-1 mt-1">
+            <Form.Label>Senha:</Form.Label>
+          </div>
+          <div className="col-10">
+            <Form.Control
+              type="password"
+              placeholder="Senha"
+              value={userPassword}
+              onChange={(e) => setUserPassword(e.target.value)}
+              onBlur={(e) => validateUserPassword(e.target.value, 4, 8)}
+              required
+            />
+          </div>
         </div>
 
-        <div className={styles.errorMessage}>
-          {errorEmail ? <small>Digite um email válido</small> : null}
-        </div>
-      </div>
-
-      <div className={styles.singleInput}>
-        <div className={styles.inputText}>
-          <span>Senha:</span>
-          <input
-            className={styles.input}
-            type="password"
-            placeholder="Senha"
-            value={userPassword}
-            onChange={(e) => setUserPassword(e.target.value)}
-            onBlur={(e) => validateUserPassword(e.target.value, 4, 8)}
-            required
-          />
-        </div>
-        <div className={styles.errorMessage}>
+        <Form.Text>
           {errorPassword ? (
-            <small>
+            <small className="text-danger">
               Digite uma senha entre 4 e 8 caracteres contendo letras e números
               e um caractere especial
             </small>
           ) : null}
+        </Form.Text>
+      </Form.Group>
+
+      <div className="row justify-content-center">
+        <div className="col-4">
+          <input
+            class="btn btn-primary"
+            type="submit"
+            value="Registrar Novo Usuário"
+            onClick={handleCreateNewUser}
+          />
+        </div>
+
+        <div className="col-4">
+          <Link to="/">
+            <Button type="button" className="btn btn-dark">
+              Retornar ao Menu
+            </Button>
+          </Link>
         </div>
       </div>
-
-      <div className={styles.btnContainer}>
-        <button type="submit" onClick={handleCreateNewUser}>
-          Registrar novo usuário
-        </button>
-
-        <Link to="/">
-          <button className={styles.linkBtn}>Retornar ao menu</button>
-        </Link>
-      </div>
-    </form>
+    </Form>
   );
 }

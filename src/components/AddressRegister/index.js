@@ -1,5 +1,6 @@
 import React, { useContext, useState } from "react";
 import { UserContext } from "../../hooks/useUsers";
+import { Container, Card, Button } from "react-bootstrap";
 import AddressField from "../AddressField";
 import styles from "./styles.module.css";
 
@@ -41,25 +42,31 @@ export default function AddressRegister({ selectedUser }) {
   }
 
   return (
-    <>
-      <div className={styles.addressContainer}>
-        {addresses.map((address) => (
-          <AddressField
-            values={address}
-            onChange={(value, field) =>
-              handleAddressChange(value, field, address.id)
-            }
-          />
-        ))}
-      </div>
-      <div className={styles.btnContainer}>
-        <button
-          className={styles.buttonNewAddress}
-          onClick={() => addAddress()}
-        >
-          Adicionar novo Endereço
-        </button>
-      </div>
-    </>
+    <div className={styles.container}>
+      <Card style={{ border: "none" }}>
+        <div className="container-fluid">
+          <div className="row p-1">
+            {addresses.map((address) => (
+              <div className="col-6 p-1">
+                <AddressField
+                  values={address}
+                  onChange={(value, field) =>
+                    handleAddressChange(value, field, address.id)
+                  }
+                />
+              </div>
+            ))}
+          </div>
+        </div>
+      </Card>
+
+      <Button
+        className="btn btn-primary"
+        className={styles.buttonNewAddress}
+        onClick={() => addAddress()}
+      >
+        Adicionar Endereço
+      </Button>
+    </div>
   );
 }

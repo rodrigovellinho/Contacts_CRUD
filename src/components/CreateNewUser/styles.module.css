@@ -1,21 +1,5 @@
-.container {
-  background: var(--gray-800);
-  color: var(--white);
-  padding: 1.5rem 2rem;
-  margin-top: 1rem;
-  width: 45%;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-evenly;
-  font-size: 2rem;
-  border-radius: 5px;
-}
-
-.registerBtn {
-  padding: 0.6rem;
-  border: none;
-  background: var(--blue-light);
-  color: var(--white);
-  border-radius: 5px;
-  margin-left: 1rem;
+span {
+  margin-right: 2rem;
+  font-weight: 600;
+  font-size: 1.2rem;
 }

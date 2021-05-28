@@ -1,16 +1,22 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { Button, Card, Container } from "react-bootstrap";
 import styles from "./styles.module.css";
 
 export default function CreateNewUser() {
   return (
-    <>
-      <div className={styles.container}>
-        <span>Cadastrar novo usuário</span>
+    <Container className="d-flex">
+      <div className="mt-3 p-2 col-4 border border-warning rounded-lg h5 ">
+        <span>Cadastrar novo usuário:</span>
         <Link to="/register">
-          <button className={styles.registerBtn}>Cadastrar</button>
+          <Button
+            type="button"
+            className="btn btn-warning btn-sm text-white font-weight-bold"
+          >
+            Cadastrar
+          </Button>
         </Link>
       </div>
-    </>
+    </Container>
   );
 }

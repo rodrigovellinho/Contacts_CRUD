@@ -1,5 +1,6 @@
 import React from "react";
 import axios from "axios";
+import { Card, Button, Form } from "react-bootstrap";
 import styles from "./styles.module.css";
 
 export default ({ values, onChange }) => {
@@ -19,56 +20,88 @@ export default ({ values, onChange }) => {
   };
 
   return (
-    <div className={styles.form}>
-      <h1 className={styles.title}>Endereço</h1>
+    <Form className="border p-1" style={{ borderRadius: "5px" }}>
+      <Form.Label className="font-weight-bold h5">Endereço</Form.Label>
 
-      <div className={styles.singleInput}>
-        <label>CEP:</label>
-        <input
-          className={styles.input}
-          value={values.cep}
-          onChange={(e) => onChange(e.target.value, "cep")}
-        />
-        <button className={styles.button} onClick={getAddress}>
-          Procurar
-        </button>
-      </div>
+      <Form.Group>
+        <div className="row">
+          <div className="col-2 mt-1">
+            <Form.Label>CEP:</Form.Label>
+          </div>
+          <div className="col-7">
+            <Form.Control
+              value={values.cep}
+              onChange={(e) => onChange(e.target.value, "cep")}
+            />
+          </div>
+          <div className="col-2">
+            <Button className="btn btn-dark" onClick={getAddress}>
+              Procurar
+            </Button>
+          </div>
+        </div>
+      </Form.Group>
 
-      <div className={styles.singleInput}>
-        <label>Logradouro:</label>
-        <input
-          className={styles.input}
-          value={values.logradouro}
-          onChange={(e) => onChange(e.target.value, "logradouro")}
-        />
-      </div>
-      <div className={styles.singleInput}>
-        <label>Bairro:</label>
-        <input
-          className={styles.input}
-          value={values.bairro}
-          onChange={(e) => onChange(e.target.value, "bairro")}
-        />
-      </div>
-      <div className={styles.singleInput}>
-        <label>Localidade:</label>
-        <input
-          className={styles.input}
-          value={values.localidade}
-          onChange={(e) => onChange(e.target.value, "localidade")}
-        />
-      </div>
-      <div className={styles.singleInput}>
-        <label>UF:</label>
-        <input
-          className={styles.input}
-          value={values.uf}
-          onChange={(e) => onChange(e.target.value, "uf")}
-        />
-      </div>
+      <Form.Group>
+        <div className="row">
+          <div className="col-2 mt-1">
+            <Form.Label>Logradouro:</Form.Label>
+          </div>
+          <div className="col-9">
+            <Form.Control
+              value={values.logradouro}
+              onChange={(e) => onChange(e.target.value, "logradouro")}
+            />
+          </div>
+        </div>
+      </Form.Group>
+
+      <Form.Group>
+        <div className="row">
+          <div className="col-2 mt-1">
+            <Form.Label>Bairro:</Form.Label>
+          </div>
+          <div className="col-9">
+            <Form.Control
+              value={values.bairro}
+              onChange={(e) => onChange(e.target.value, "bairro")}
+            />
+          </div>
+        </div>
+      </Form.Group>
+
+      <Form.Group>
+        <div className="row">
+          <div className="col-2 mt-1">
+            <Form.Label>Localidade:</Form.Label>
+          </div>
+          <div className="col-9">
+            <Form.Control
+              value={values.localidade}
+              onChange={(e) => onChange(e.target.value, "localidade")}
+            />
+          </div>
+        </div>
+      </Form.Group>
+
+      <Form.Group>
+        <div className="row">
+          <div className="col-2 mt-1">
+            <Form.Label>UF:</Form.Label>
+          </div>
+          <div className="col-9">
+            <Form.Control
+              className={styles.input}
+              value={values.uf}
+              onChange={(e) => onChange(e.target.value, "uf")}
+            />
+          </div>
+        </div>
+      </Form.Group>
+
       <div>
-        <button className={styles.buttonSave}>Salvar</button>
+        <Button className="btn btn-primary">Salvar</Button>
       </div>
-    </div>
+    </Form>
   );
 };

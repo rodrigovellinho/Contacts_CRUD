@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { Button } from "react-bootstrap";
 import styles from "./styles.module.css";
 
 export default function User({ user, deleteUser }) {
@@ -13,17 +14,17 @@ export default function User({ user, deleteUser }) {
 
   return (
     <tr>
-      <td style={{ textAlign: "center" }}>{user.name}</td>
-      <td style={{ textAlign: "center" }}>{user.email}</td>
+      <td>{user.name}</td>
+      <td>{user.email}</td>
       <td style={{ textAlign: "center" }}>
         <Link to={`/edit/${user.id}`}>
-          <button className={styles.editBtn}>Editar</button>
+          <Button className="btn btn-primary">Editar</Button>
         </Link>
       </td>
       <td style={{ textAlign: "center" }}>
-        <button className={styles.deleteBtn} onClick={handleDeleteUser}>
+        <Button className="btn btn-danger" onClick={handleDeleteUser}>
           Deletar
-        </button>
+        </Button>
       </td>
     </tr>
   );

@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Main from "./pages/main";
 import EditRegister from "./pages/editRegister";
 import UserFirstRegister from "./pages/firstRegister";
+import "bootstrap/dist/css/bootstrap.min.css";
 
 function App() {
   return (

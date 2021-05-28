@@ -2,34 +2,47 @@ import React, { useContext } from "react";
 import { UserContext } from "../../hooks/useUsers";
 import PersonnalRegister from "../PersonnalRegister";
 import { Link } from "react-router-dom";
+import { Card, Button } from "react-bootstrap";
+import Header from "../Header";
 import AddressRegister from "../AddressRegister";
-import styles from "./styles.module.css";
 import PhoneRegister from "../PhoneRegister";
+import styles from "./styles.module.css";
 
 export default function CompleteRegister({ selectedUser }) {
-  const { users, addUser } = useContext(UserContext);
+  const { addUser } = useContext(UserContext);
 
   return (
     <div className={styles.container}>
-      <div className={styles.formContainer}>
-        <div className={styles.titleContainer}>
-          <span className={styles.title}>Cadastro usuário</span>
+      <Header />
+      <Card className="mt-2">
+        <div className="text-center bg-dark text-white">
+          <Card.Header className="font-weight-bold h3">
+            Cadastro usuário
+          </Card.Header>
         </div>
-        <div className={styles.fullRegister}>
-          <div className={styles.personnalRegister}>
-            <PersonnalRegister selectedUser={selectedUser} />
-            <PhoneRegister selectedUser={selectedUser} />
+
+        <div className="container-fluid">
+          <div className="row p-1">
+            <div className="col-6 p-1">
+              <PersonnalRegister
+                selectedUser={selectedUser}
+                addUser={addUser}
+              />
+            </div>
+            <div className="col-6 p-1">
+              <PhoneRegister selectedUser={selectedUser} />
+            </div>
           </div>
-          <div className={styles.addressContainer}>
-            <AddressRegister selectedUser={selectedUser} />
-          </div>
         </div>
-        <div className={styles.btnContainer}>
-          <Link to="/">
-            <button className={styles.btnCancel}>Voltar ao menu</button>
-          </Link>
-        </div>
-      </div>
+
+        <AddressRegister selectedUser={selectedUser} />
+
+        <Link to="/">
+          <Button className="btn-lg btn-danger float-right mr-2 mb-2">
+            Voltar ao menu
+          </Button>
+        </Link>
+      </Card>
     </div>
   );
 }
