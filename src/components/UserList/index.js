@@ -2,7 +2,6 @@ import React, { useContext } from "react";
 import { UserContext } from "../../hooks/useUsers";
 import { Container, Card, Table } from "react-bootstrap";
 import User from "../User";
-import styles from "./styles.module.css";
 
 export default function UserList() {
   const { users, deleteUser } = useContext(UserContext);

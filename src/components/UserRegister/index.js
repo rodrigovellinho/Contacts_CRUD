@@ -2,7 +2,6 @@ import React, { useState, useContext } from "react";
 import { UserContext } from "../../hooks/useUsers";
 import { Link } from "react-router-dom";
 import { Form, Button } from "react-bootstrap";
-import styles from "./styles.module.css";
 
 export default function UserRegister() {
   const { addUser } = useContext(UserContext);

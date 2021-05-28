@@ -2,10 +2,9 @@ import React, { useState, useContext } from "react";
 import { UserContext } from "../../hooks/useUsers";
 import InputMask from "react-input-mask";
 import { Container, Card, Form, Button, Row } from "react-bootstrap";
-import styles from "./styles.module.css";
 
 export default function PhoneRegister({ selectedUser }) {
-  const { users, addUser } = useContext(UserContext);
+  const { addUser } = useContext(UserContext);
   const [phones, setPhones] = useState([
     {
       id: 1,
@@ -51,7 +50,7 @@ export default function PhoneRegister({ selectedUser }) {
               <Form.Group className="mr-3">
                 <Form.Label>Telefone:</Form.Label>
                 <InputMask
-                  className={styles.inputMask}
+                  className="ml-3"
                   mask="(99)99999-9999"
                   value={phone.number}
                   onChange={(e) => handleChangePhone(e.target.value, phone.id)}
@@ -61,12 +60,11 @@ export default function PhoneRegister({ selectedUser }) {
           </Row>
         </Container>
 
-        <Button
-          className="btn-block  btn-primary float-center"
-          onClick={addPhone}
-        >
-          Adicionar
-        </Button>
+        <div className="d-flex justify-content-center mb-1">
+          <Button className="btn  btn-primary " onClick={addPhone}>
+            Adicionar
+          </Button>
+        </div>
       </Form>
     </Card>
   );

@@ -1,7 +1,6 @@
 import React from "react";
 import axios from "axios";
-import { Card, Button, Form } from "react-bootstrap";
-import styles from "./styles.module.css";
+import { Button, Form } from "react-bootstrap";
 
 export default ({ values, onChange }) => {
   const getAddress = async () => {
@@ -20,7 +19,11 @@ export default ({ values, onChange }) => {
   };
 
   return (
-    <Form className="border p-1" style={{ borderRadius: "5px" }}>
+    <Form
+      className="border p-1"
+      style={{ borderRadius: "5px" }}
+      className="bg-white border p-1"
+    >
       <Form.Label className="font-weight-bold h5">Endereço</Form.Label>
 
       <Form.Group>
@@ -91,7 +94,6 @@ export default ({ values, onChange }) => {
           </div>
           <div className="col-9">
             <Form.Control
-              className={styles.input}
               value={values.uf}
               onChange={(e) => onChange(e.target.value, "uf")}
             />
@@ -99,7 +101,7 @@ export default ({ values, onChange }) => {
         </div>
       </Form.Group>
 
-      <div>
+      <div className="d-flex justify-content-center mb-1">
         <Button className="btn btn-primary">Salvar</Button>
       </div>
     </Form>

@@ -1,12 +1,8 @@
-import React, { useContext, useState } from "react";
-import { UserContext } from "../../hooks/useUsers";
-import { Container, Card, Button } from "react-bootstrap";
+import React, { useState } from "react";
+import { Card, Button } from "react-bootstrap";
 import AddressField from "../AddressField";
-import styles from "./styles.module.css";
 
 export default function AddressRegister({ selectedUser }) {
-  const { users, editUser } = useContext(UserContext);
-
   const [addresses, setAddresses] = useState([
     {
       id: 1,
@@ -42,8 +38,8 @@ export default function AddressRegister({ selectedUser }) {
   }
 
   return (
-    <div className={styles.container}>
-      <Card style={{ border: "none" }}>
+    <>
+      <Card style={{ border: "none" }} className="bg-light">
         <div className="container-fluid">
           <div className="row p-1">
             {addresses.map((address) => (
@@ -60,13 +56,11 @@ export default function AddressRegister({ selectedUser }) {
         </div>
       </Card>
 
-      <Button
-        className="btn btn-primary"
-        className={styles.buttonNewAddress}
-        onClick={() => addAddress()}
-      >
-        Adicionar Endereço
-      </Button>
-    </div>
+      <div className="d-flex flex-row-reverse mr-2 mb-3">
+        <Button className="btn-lg btn-primary" onClick={() => addAddress()}>
+          Novo Endereço
+        </Button>
+      </div>
+    </>
   );
 }

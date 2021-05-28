@@ -6,15 +6,14 @@ import { Card, Button } from "react-bootstrap";
 import Header from "../Header";
 import AddressRegister from "../AddressRegister";
 import PhoneRegister from "../PhoneRegister";
-import styles from "./styles.module.css";
 
 export default function CompleteRegister({ selectedUser }) {
   const { addUser } = useContext(UserContext);
 
   return (
-    <div className={styles.container}>
+    <>
       <Header />
-      <Card className="mt-2">
+      <Card className="mt-2 bg-light">
         <div className="text-center bg-dark text-white">
           <Card.Header className="font-weight-bold h3">
             Cadastro usuário
@@ -39,10 +38,10 @@ export default function CompleteRegister({ selectedUser }) {
 
         <Link to="/">
           <Button className="btn-lg btn-danger float-right mr-2 mb-2">
-            Voltar ao menu
+            Voltar ao Menu
           </Button>
         </Link>
       </Card>
-    </div>
+    </>
   );
 }

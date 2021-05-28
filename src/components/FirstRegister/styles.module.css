@@ -1,39 +1,4 @@
 .container {
-  background: #f8f9fa;
+  background: var(--background);
   height: 100vh;
 }
-
-/* 
-
-.formContainer {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  margin-top: 2rem;
-  width: 900px;
-  border-radius: 5px;
-  background: var(--gray-200);
-}
-
-.titleContainer {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: var(--gray-850);
-  width: 100%;
-}
-
-.title {
-  font-size: 2.2rem;
-  color: var(--white);
-  font-weight: 700;
-  padding: 1rem;
-}
-
-.fullRegister {
-  margin: 1rem auto;
-  width: 100%;
-  justify-content: center;
-}
- */

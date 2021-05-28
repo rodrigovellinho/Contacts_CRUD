@@ -1,7 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { Button, Card, Container } from "react-bootstrap";
-import styles from "./styles.module.css";
+import { Button, Container } from "react-bootstrap";
 
 export default function CreateNewUser() {
   return (
@@ -11,7 +10,7 @@ export default function CreateNewUser() {
         <Link to="/register">
           <Button
             type="button"
-            className="btn btn-warning btn-sm text-white font-weight-bold"
+            className="btn btn-warning btn-sm text-white font-weight-bold ml-2"
           >
             Cadastrar
           </Button>

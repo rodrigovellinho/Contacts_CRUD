@@ -1,7 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { Button } from "react-bootstrap";
-import styles from "./styles.module.css";
 
 export default function User({ user, deleteUser }) {
   function handleDeleteUser(e) {
